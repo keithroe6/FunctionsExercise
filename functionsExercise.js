@@ -15,7 +15,7 @@ beaker(`Meep `);
 
 // 3.
 function muppetShow(a,b) {
-    if (a == `Muppet` && b == `Show`){
+    if (a === `Muppet` && b === `Show`){
         console.log(`It's time to play the music. It's time to light the lights`);
     }
       
@@ -32,7 +32,7 @@ console.log(kermit());
 
 // 5. 
 function muppetShowSeasons(seasons) {
-    if (seasons == 5){
+    if (seasons === 5){
         return true;
     }
     else {
@@ -50,7 +50,7 @@ console.log(muppetShowSeasons(5));
 manOrMuppet();
 
 // 7.
-rainbowConnection = () => console.log(`Someday We'll find it. The Rainbow Connection. The lovers, the dreamers and me`);
+rainbowConnection = () => `Someday We'll find it. The Rainbow Connection. The lovers, the dreamers and me`;
 
 rainbowConnection();
 
@@ -62,10 +62,10 @@ rainbowConnection();
 const newMuppetMovies = [`The Muppets`, `Muppets Most Wanted`];
 
 // 10b.
-const capitals = newMuppetMovies.map(function(movie) {
+const upperMovies = newMuppetMovies.map(function(movie) {
     return movie.toUpperCase();
 });
-console.log(capitals);
+console.log(upperMovies);
 
 // Bonus
 // 11a.
@@ -73,12 +73,20 @@ const oldMuppetMovies = [`The Muppet Movie`, `The Muppets Take Manhattan`, `The 
 
 // 11b.
 
-function film(title){
-    return title.length === 22;
-} 
+const twoMovies = oldMuppetMovies.filter(movie => movie === `The Great Muppet Caper` || `Muppet Treasure Island`);
+ console.log(twoMovies);
 
-const twoMovies= oldMuppetMovies.filter(film);
-console.log(twoMovies); 
+// function film(title){             Did not use arrow function :-(
+//     return title.length === 22;
+// } 
+
+// const twoMovies= oldMuppetMovies.filter(film);
+// console.log(twoMovies); 
+
+//OR
+
+// const twoMovies = oldMuppetMovies.filter(a => a.length === 22);
+// console.log(twoMovies);
 
 // 12a.
 const charactersOne = [`Statler`, `Waldorf`];
@@ -99,10 +107,28 @@ randomMuppet(charactersTwo);
 // 13.
 test = `Kids these days`;
 
+// const caps = string => {
+//     let newString = ``;
+//     for(i=0; i<string.length; i++) {
+//         if(i%2 === 0) {
+//             newString += string[i].toUpperCase();
+//         }
+//         else if (string[i] === ` `) {
+//             newString += ` `;
+//         }
+//         else {
+//             newString += string[i].toLowerCase();
+//         }
+//     }
+// console.log(newString);
+// }
+
+
+
 caps = (string) => {
     let noSpaceString = string.split(" ").join("");
-    let result = "";
-            for (let i=0; i < noSpaceString.length; i++) {
+     result = "";
+            for ( i=0; i < noSpaceString.length; i++) {
                 if (i%2 == 0) {
                     result += noSpaceString[i].toUpperCase();
                //console.log( noSpaceString[i].toUpperCase());
